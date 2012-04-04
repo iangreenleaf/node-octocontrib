@@ -4,4 +4,5 @@ app = express.createServer()
 app.get '/', (req, res) ->
   res.send 'Hello World'
 
-app.listen(80)
+process.env.PORT ?= 1234
+app.listen(process.env.PORT)
