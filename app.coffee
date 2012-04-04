@@ -1,8 +1,5 @@
 express = require "express"
-app = express.createServer()
+module.exports = app = express.createServer()
 
 app.get '/', (req, res) ->
-  res.send 'Hello World'
-
-process.env.PORT ?= 1234
-app.listen(process.env.PORT)
+  res.send { alive: true }
